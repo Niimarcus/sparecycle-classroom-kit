@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>org.example.llamafile</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/PATH/TO/llamafile-0.10.6</string>
+		<string>-m</string>
+		<string>/PATH/TO/gemma-4-26B-A4B-it-UD-Q4_K_M.gguf</string>
+		<string>--mmproj</string>
+		<string>/PATH/TO/mmproj-F16.gguf</string>
+		<string>--server</string>
+		<string>--alias</string>
+		<string>gemma-4-26b-a4b</string>
+		<string>--gpu</string>
+		<string>apple</string>
+		<string>-ngl</string>
+		<string>99</string>
+		<string>-c</string>
+		<string>131072</string>
+		<string>-np</string>
+		<string>8</string>
+		<string>--jinja</string>
+		<string>--reasoning</string>
+		<string>off</string>
+		<string>--host</string>
+		<string>127.0.0.1</string>
+		<string>--port</string>
+		<string>8089</string>
+		<string>--no-webui</string>
+		<string>--no-slots</string>
+		<string>--api-key-file</string>
+		<string>/PATH/TO/llamafile_keys</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/dev/null</string>
+	<key>StandardOutPath</key>
+	<string>/dev/null</string>
+</dict>
+</plist>
