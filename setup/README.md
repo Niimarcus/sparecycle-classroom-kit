@@ -40,7 +40,7 @@ the server.
 tailscale funnel --bg 8089
 ```
 
-Your class software then calls that HTTPS name with the key, using the OpenAI-style
+Your class software then calls that HTTPS name with the key, using the standard
 `/v1/chat/completions` endpoint that llamafile serves.
 
 ## Power

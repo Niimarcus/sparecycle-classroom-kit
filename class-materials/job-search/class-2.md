@@ -2,6 +2,8 @@
 
 ## Prompt 1A · Resume page
 
+Note: this published copy leaves out one paragraph of the class prompt. That paragraph tells the page what to do when it is opened outside a Sparecycle class.
+
 ````text
 Build me a one-page website called resume.html. Use ONLY the resume text I paste at the bottom of this message. Do not invent anything.
 
@@ -16,7 +18,6 @@ The page has 4 parts:
    e. While it works, the button says "Tailoring..." and cannot be clicked. Any error shows in one short line under the button.
    How the page talks to the AI:
    - In the class (window.sparecycle exists): read the link with await window.sparecycle.readLink(link), which gives {text}, and get the answer with await window.sparecycle.complete(prompt), which gives the answer text. No key is needed.
-   - Anywhere else (window.sparecycle does not exist): show a field "Your OpenRouter key" with "Save key" and "Forget key" buttons. Under it, show this note: "A free OpenRouter key works (no card needed, about 50 tailors a day). When you click Tailor, your resume and the job text go to OpenRouter, and free models may keep what you send." Also show a button "Copy tailor prompt" (works with or without a key): it copies the same tailor prompt, with my full resume and the job text, so I can paste it into any free AI chat. When there is no key, Tailor my resume shows "No key yet. Click Copy tailor prompt and paste it into a free AI chat." Keep the key only in this browser, in localStorage as "resume-openrouter-key". Wrap every localStorage use in try/catch. Read the link with fetch("https://r.jina.ai/" + link, {headers: {"X-Return-Format": "text"}}); if that fails, show "Could not read that link. Paste the job text instead." Get the answer with fetch("https://openrouter.ai/api/v1/chat/completions"), method POST, headers Authorization: "Bearer " + key and Content-Type: application/json, and a JSON body with model "openrouter/free" and messages holding one message: role "user", content the prompt. The answer is the content of the first choice's message.
 4. A small "Job tracker" table: company, role, date, status (Saved, Applied, Interview, Offer). Add a "Copy tracker as text" button. Do not save the tracker in the browser.
 
 Rules:
